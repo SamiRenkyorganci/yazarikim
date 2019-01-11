@@ -1,0 +1,64 @@
+﻿@model IEnumerable<YazariKim.Model.Entity.Book_Publisher>
+
+@{
+    ViewBag.Title = "Kitap Yayınevi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste</h2>
+
+<p>
+	<a href="Book_Publisher/Create"><i class="fa fa-plus-square fa-3x"></i></a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.book.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publisher.publisherName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.book.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Publisher.publisherName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateUserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateUserID)
+        </td>*@
+		<td>
+			<a href="Book_Publisher/Edit/@item.ID"><i class="fa fa-edit fa-2x"></i></a>
+			<a href="Book_Publisher/Details/@item.ID"><i class="fa fa-info-circle fa-2x"></i></a>
+			<a href="Book_Publisher/Delete/@item.ID"><i class="fa fa-trash fa-2x"></i></a>
+		</td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<YazariKim.Model.Entity.Book>
+
+@{
+    ViewBag.Title = "Kitap Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kitap Listesi</h2>
+
+<p>
+	@*@Html.ActionLink("Yeni Oluştur", "Create")*@
+	<a href="Books/Create"><i class="fa fa-plus-square fa-3x"></i></a>
+	
+</p>
+<table class="table">
+    <tr>
+        <th>
+		   @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Languages.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Isbn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Barkod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detail)
+        </th>
+     @*   <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Languages.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Isbn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Barkod)
+        </td>
+        <td>
+			@{ 
+				string shortdetail = item.Detail.Substring(0, 25);
+			}
+            @Html.DisplayFor(modelItem => shortdetail)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateUserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateUserID)
+        </td>*@
+		<td>
+			@*<a><i class="fa fa-home"></i>Düznle</a>*@
+			<a href="Books/Edit/@item.ID"><i class="fa fa-edit fa-2x"></i></a>
+			<a href="Books/Details/@item.ID"><i class="fa fa-info-circle fa-2x"></i></a>
+			<a href="Books/Delete/@item.ID"><i class="fa fa-trash fa-2x"></i></a>
+
+		</td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<YazariKim.Model.Entity.User>
+
+@{
+    ViewBag.Title = "Kullanıcılar";
+}
+
+<h2>Liste</h2>
+
+<p>
+	<a href="Users/Create"><i class="fa fa-plus-square fa-3x"></i></a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminControl)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminControl)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateUserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateUserID)
+        </td>*@
+		<td>
+			<a href="Users/Edit/@item.ID"><i class="fa fa-edit fa-2x"></i></a>
+			<a href="Users/Details/@item.ID"><i class="fa fa-info-circle fa-2x"></i></a>
+			<a href="Users/Delete/@item.ID"><i class="fa fa-trash fa-2x"></i></a>
+		</td>
+    </tr>
+}
+
+</table>

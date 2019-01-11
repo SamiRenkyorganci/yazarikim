@@ -1,0 +1,156 @@
+﻿@using System.Web.Optimization
+@{
+	ViewBag.Title = "Admin Paneli";
+	var user = Session["AdminLogin"] as YazariKim.Model.Entity.User;
+}
+
+<h2>  @user.UserName  Hoşgeldiniz</h2>
+<li>
+
+	<a class="has-arrow " href="#" aria-expanded="false"><span class="hide-menu">Kitap İşlemleri</span></a>
+	
+	<ul aria-expanded="false" class="collapse">
+		<li>
+			
+			<a href="/Admin/Books/Create">Kitap Ekle</a>
+		</li>
+		<li><a href="/Admin/Books">Kitap Listesi</a></li>
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Yayınevi İşlemleri</a>
+			<ul aria-expanded="false" class="collapse">
+				
+				<li><a href="/Admin/Publishers">Yayınevi Listesi</a></li>
+			</ul>
+		</li>
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Dil İşlemleri</a>
+			<ul aria-expanded="false" class="collapse">
+				
+				<li><a href="/Admin/Languages">Dil Listesi</a></li>
+			</ul>
+		</li>
+		@*<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Fotoğraf İşlemleri</a>
+			<ul aria-expanded="false" class="collapse">
+				<li><a href="/Admin/Book_Pictures/Create">Kitap Fotoğraf Ekle</a></li>
+				<li><a href="/Admin/Book_Pictures">Fotografları Görüntüle</a></li>
+			</ul>
+		</li>*@
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Kitap Türü İşlemleri</a>
+			<ul aria-expanded="false" class="collapse">
+				<li><a href="/Admin/Types">Tür Listesi</a></li>
+				<li>
+					<a class="has-arrow" href="#" aria-expanded="false">Kitap ve Tür</a>
+					<ul aria-expanded="false" class="collapse">
+						<li><a href="/Admin/Book_Type/Create">Ekle</a></li>
+						<li><a href="/Admin/Book_Type">Listele</a></li>
+
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</li>
+<hr />
+<li>
+	<a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Yazar İşlemleri</span></a>
+	<ul aria-expanded="false" class="collapse">
+		<li><a href="/Admin/Writers/Create">Yazar Ekle</a></li>
+		<li><a href="/Admin/Writers">Yazar Listesi</a></li>
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Meslekler</a>
+			<ul aria-expanded="false" class="collapse">
+
+
+				<li><a href="/Admin/Writer_Job/Create">Ekle</a></li>
+				<li><a href="/Admin/Writer_Job">Listele</a></li>
+
+
+
+
+			</ul>
+		</li>
+		
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Ülkeler</a>
+			<ul aria-expanded="false" class="collapse">
+				<li><a href="/Admin/Countries">Ülke Listesi</a></li>
+			</ul>
+		</li>
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Dönemler</a>
+			<ul aria-expanded="false" class="collapse">
+
+				<li><a href="/Admin/Seasons">Dönem Listesi</a></li>
+				<li>
+					<a class="has-arrow" href="#" aria-expanded="false">Yazar ve Dönem</a>
+					<ul aria-expanded="false" class="collapse">
+						<li><a href="/Admin/Writer_Season/Create">Ekle</a></li>
+						<li><a href="/Admin/Writer_Season">Listele</a></li>
+
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a class="has-arrow" href="#" aria-expanded="false">Yazar Fotoğrafları</a>
+			<ul aria-expanded="false" class="collapse">
+				<li><a href="/Admin/Writer_Pictures/Create">Fotoğraf Ekle</a></li>
+				<li><a href="/Admin/Writer_Pictures">Fotoğrafları Görüntüle</a></li>
+			</ul>
+		</li>
+	</ul>
+</li>
+@*<ul>
+		<li>
+			<a href="/Admin/Users">Adminler Yönetimi</a>
+		</li>
+		<li>
+			<a href="/Admin/Languages">Dil Yönetimi</a>
+		</li>
+		<li>
+			<a href="/Admin/Countries">Ülke Bilgileri</a>
+		</li>
+		<li>
+			<a href="/Admin/Books">Kitaplar</a>
+		</li>
+		<li>
+			<a href="Admin/Writers">Yazarlar</a>
+		</li>
+		<li>
+			<a href="Admin/Jobs">Meslekler</a>
+		</li>
+		<li>
+			<a href="Admin/Publishers">Yayın Evleri</a>
+		</li>
+		<li>
+			<a href="Admin/Types">Kitap Türleri</a>
+		</li>
+		<li>
+			<a href="Admin/Writer_Job">Yazar Meslek Seçimi</a>
+		</li>
+		<li>
+			<a href="Admin/Book_Pictures">Kitap Foto</a>
+		</li>
+		<li>
+			<a href="Admin/Book_Pictures">Kitap Yayınevi</a>
+		</li>
+		<li>
+			<a href="Admin/Seasons">Dönemler</a>
+		</li>
+		<li>
+			<a href="Admin/Book_Type">Kitap Türü</a>
+		</li>
+		<li>
+			<a href="Admin/Writer_Book">Kitap Yazar</a>
+		</li>
+		<li>
+			<a href="Admin/Writer_Pictures">Yazar Foto</a>
+		</li>
+		<li>
+			<a href="Admin/Writer_Season">Yazar Dönemi</a>
+		</li>
+	</ul>*@
+
+
